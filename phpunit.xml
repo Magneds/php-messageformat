@@ -1,0 +1,20 @@
+<phpunit 	bootstrap="vendor/autoload.php"
+			colors="true"
+			convertErrorsToExceptions="true"
+			convertNoticesToExceptions="true"
+			convertWarningsToExceptions="true"
+			stopOnFailure="true">
+	<testsuites>
+		<testsuite name="Unit Tests">
+			<directory>test</directory>
+		</testsuite>
+	</testsuites>
+	<filter>
+		<whitelist processUncoveredFilesFromWhitelist="true">
+			<directory suffix=".php">./source</directory>
+			<exclude>work</exclude>
+			<exclude>vendor</exclude>
+			<exclude>test</exclude>
+		</whitelist>
+	</filter>
+</phpunit>

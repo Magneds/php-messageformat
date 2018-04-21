@@ -1,0 +1,21 @@
+{
+  "name": "konfirm/i18n",
+  "description": "Internationalization",
+  "license": "proprietary",
+  "authors": [
+	{
+	  "name": "Rogier Spieker",
+	  "email": "rogier+php-i18n@konfirm.eu"
+	}
+  ],
+  "require": {
+    "phpunit/phpunit": "^7.1",
+    "scato/phpeg": "^1.0",
+    "phpunit/php-invoker": "^2.0"
+  },
+  "autoload": {
+	"psr-4": {
+	  "Konfirm\\MessageFormat\\": "source/"
+	}
+  }
+}

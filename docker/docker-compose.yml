@@ -1,0 +1,45 @@
+version: '2'
+services:
+  php-intl-cli-7.2:
+    container_name: php-7.2-int-xdbg
+    restart: always
+    build:
+      context: .
+      dockerfile: php-72-cli
+    working_dir:
+      /app
+    volumes:
+      - ../:/app
+
+  php-intl-cli-7.1:
+    container_name: php-7.1-int-xdbg
+    restart: always
+    build:
+      context: .
+      dockerfile: php-71-cli
+    working_dir:
+      /app
+    volumes:
+      - ../:/app
+
+  php-intl-cli-7.0:
+    container_name: php-7.0-int-xdbg
+    restart: always
+    build:
+      context: .
+      dockerfile: php-70-cli
+    working_dir:
+      /app
+    volumes:
+      - ../:/app
+
+  php-intl-cli-5.6:
+    container_name: php-5.6-int-xdbg
+    restart: always
+    build:
+      context: .
+      dockerfile: php-56-cli
+    working_dir:
+      /app
+    volumes:
+      - ../:/app
