@@ -64,7 +64,21 @@ class MessageFormatter extends \MessageFormatter {
 		return $compatible ? parent::getPattern() : $this->pattern;
 	}
 
-	/**
+    /**
+     *  Parse input string according to pattern
+     *
+     *  @param   string $value
+     *  @return  array | bool
+     */
+    public function parse($value) {
+        $parsed = parent::parse($value);
+        return $parsed ? array_combine(array_map(function($index) {
+            return $this->catalog->keywordAt((int) $index);
+        }, array_keys($parsed)), $parsed) : $parsed;
+    }
+
+
+    /**
 	 *  Initialize the MessageFormatter
 	 *
 	 *  @param   string  $pattern
