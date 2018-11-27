@@ -1,7 +1,6 @@
-<?php  //  Copyright ⓒ 2017 Konfirm - All Rights Reserved
+<?php  //  Copyright ⓒ 2017-2018 Magneds - All Rights Reserved
 
-namespace Konfirm\MessageFormat;
-
+use Magneds\MessageFormat\KeywordCatalog;
 use PHPUnit\Framework\TestCase;
 
 

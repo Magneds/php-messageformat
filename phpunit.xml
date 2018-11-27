@@ -6,15 +6,17 @@
 			stopOnFailure="true">
 	<testsuites>
 		<testsuite name="Unit Tests">
-			<directory>test</directory>
+			<directory>tests</directory>
 		</testsuite>
 	</testsuites>
 	<filter>
 		<whitelist processUncoveredFilesFromWhitelist="true">
 			<directory suffix=".php">./source</directory>
-			<exclude>work</exclude>
-			<exclude>vendor</exclude>
-			<exclude>test</exclude>
+			<exclude>
+				<directory>work</directory>
+				<directory>vendor</directory>
+				<directory>test</directory>
+			</exclude>
 		</whitelist>
 	</filter>
 </phpunit>

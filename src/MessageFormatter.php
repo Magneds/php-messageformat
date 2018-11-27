@@ -1,11 +1,11 @@
-<?php  //  Copyright ⓒ 2017 Konfirm - All Rights Reserved
+<?php  //  Copyright ⓒ 2017-2018 Magneds - All Rights Reserved
 
-namespace Konfirm\MessageFormat;
+namespace Magneds\MessageFormat;
 
 /**
  *  Class MessageFormatter
  *
- *  @package Konfirm\MessageFormat
+ *  @package Magneds\MessageFormat
  */
 class MessageFormatter extends \MessageFormatter {
 	/**

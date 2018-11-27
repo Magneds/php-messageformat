@@ -1,11 +1,11 @@
-<?php  //  Copyright ⓒ 2016 Konfirm - All Rights Reserved
+<?php  //  Copyright ⓒ 2016-2018 Magneds - All Rights Reserved
 
-namespace Konfirm\MessageFormat;
+namespace Magneds\MessageFormat;
 
 /**
  * Class KeywordCatalog
  *
- * @package Konfirm\MessageFormat
+ * @package Magneds\MessageFormat
  */
 class KeywordCatalog {
 	/**
