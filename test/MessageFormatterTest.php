@@ -21,8 +21,8 @@ class MessageFormatterTest extends TestCase {
 		$this->assertEquals('Mijn naam is Jane Doe', $keywordFormat->format($numberData));
 		$this->assertEquals('Mijn naam is Jane Doe', $numberFormat->format($numberData));
 
-		$this->assertEquals($keywordFormat->getPattern(), $numberFormat->getPattern());
-		$this->assertEquals($keywordPattern, $keywordFormat->getPattern(true));
+		$this->assertEquals($keywordFormat->getPattern(true), $numberFormat->getPattern());
+		$this->assertEquals($keywordPattern, $keywordFormat->getPattern());
 	}
 
 	public function testFormatEN() {
@@ -40,8 +40,8 @@ class MessageFormatterTest extends TestCase {
 		$this->assertEquals('A much more complex "egg sample"', $keywordFormat->format($numberData));
 		$this->assertEquals('A much more complex "egg sample"', $numberFormat->format($numberData));
 
-		$this->assertEquals($keywordFormat->getPattern(), $numberFormat->getPattern());
-		$this->assertEquals($keywordPattern, $keywordFormat->getPattern(true));
+		$this->assertEquals($keywordFormat->getPattern(true), $numberFormat->getPattern());
+		$this->assertEquals($keywordPattern, $keywordFormat->getPattern());
 	}
 
 	public function testSetPatternEN() {
@@ -56,12 +56,12 @@ class MessageFormatterTest extends TestCase {
 
 		$format = new MessageFormatter('en', $namedOne);
 
-		$this->assertEquals($indexedOne, $format->getPattern());
-		$this->assertEquals($namedOne, $format->getPattern(true));
+		$this->assertEquals($indexedOne, $format->getPattern(true));
+		$this->assertEquals($namedOne, $format->getPattern());
 
 		$format->setPattern($namedTwo);
 
-		$this->assertEquals($indexedTwo, $format->getPattern());
-		$this->assertEquals($namedTwo, $format->getPattern(true));
+		$this->assertEquals($indexedTwo, $format->getPattern(true));
+		$this->assertEquals($namedTwo, $format->getPattern());
 	}
 }

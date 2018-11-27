@@ -16,14 +16,7 @@ class MessageFormatter extends \MessageFormatter {
 	protected $catalog;
 
 	/**
-	 *  The ICU formatted message (raw input)
-	 *
-	 *  @var  string
-	 */
-	protected $message;
-
-	/**
-	 *  The ICU formatted message using indices innstead of keywords
+     *  The ICU formatted message (raw input)
 	 *
 	 *  @var  string
 	 */
@@ -38,10 +31,7 @@ class MessageFormatter extends \MessageFormatter {
 	public function __construct(string $locale, string $pattern) {
 		$this->catalog = new KeywordCatalog();
 
-		$message = $this->init($pattern);
-
-
-		parent::__construct($locale, $message);
+		parent::__construct($locale, $this->init($pattern));
 	}
 
 	/**
@@ -57,20 +47,21 @@ class MessageFormatter extends \MessageFormatter {
 	/**
 	 *  Set the pattern used by the formatter
 	 *
-	 *  @param  string  $pattern
+	 *  @param   string  $pattern
+     *  @return  bool
 	 */
 	public function setPattern($pattern) {
-		parent::setPattern($this->init($pattern));
+		return parent::setPattern($this->init($pattern));
 	}
 
 	/**
 	 *  Get the pattern used by the formatter
 	 *
-	 *  @param   bool    $original
+	 *  @param   bool    $compatible
 	 *  @return  string  pattern
 	 */
-	public function getPattern($original=false) {
-		return $original ? $this->pattern : parent::getPattern();
+	public function getPattern($compatible=false) {
+		return $compatible ? parent::getPattern() : $this->pattern;
 	}
 
 	/**
@@ -83,10 +74,9 @@ class MessageFormatter extends \MessageFormatter {
 		$this->catalog->init();
 
 		$this->pattern = $pattern;
-		$this->message = preg_replace_callback('/\{(\w+)\s*(?=,|\})/', function($match) {
+
+		return preg_replace_callback('/\{(\w+)\s*(?=,|\})/', function($match) {
 			return str_replace($match[1], $this->catalog->indexOf($match[1]), $match[0]);
 		}, $pattern);
-
-		return $this->message;
 	}
 }

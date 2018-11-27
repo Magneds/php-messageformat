@@ -26,7 +26,7 @@ class KeywordCatalog {
 
 	/**
 	 *  Obtain the index at which the provided keyword is stored, if the keyword is not yet available within the
-	 *  stored values, it is added
+	 *  stored values it is added
 	 *
 	 *  @param   string  $keyword
 	 *  @return  int
