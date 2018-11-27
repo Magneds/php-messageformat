@@ -72,6 +72,7 @@ class MessageFormatter extends \MessageFormatter {
      */
     public function parse($value) {
         $parsed = parent::parse($value);
+
         return $parsed ? array_combine(array_map(function($index) {
             return $this->catalog->keywordAt((int) $index);
         }, array_keys($parsed)), $parsed) : $parsed;
