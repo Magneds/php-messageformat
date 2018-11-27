@@ -77,6 +77,19 @@ class MessageFormatter extends \MessageFormatter {
         }, array_keys($parsed)), $parsed) : $parsed;
     }
 
+    /**
+     * Quick parse string according to pattern
+     *
+     * @param   string $locale
+     * @param   string $pattern
+     * @param   string $source
+     * @return  array|bool
+     */
+    public static function parseMessage($locale, $pattern, $source) {
+        $formatter = new static($locale, $pattern);
+
+        return $formatter->parse($source);
+    }
 
     /**
 	 *  Initialize the MessageFormatter
