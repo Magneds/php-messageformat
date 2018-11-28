@@ -230,3 +230,5 @@ Please see [Contributing](CONTRIBUTING.md)
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+[link-contributors]: ../../contributors
