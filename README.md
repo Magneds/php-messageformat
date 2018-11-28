@@ -37,9 +37,14 @@ print $formatter->format([2]);  //  Found 2 results
 
 ## API
 
-### `MessageFormatter::__construct(string $locale , string $pattern)`
+### Constructor 
+```php
+MessageFormatter::__construct(string $locale , string $pattern)
+```
+
 Create a new MessageFormatter instance rendering the provided pattern for the locale.
 
+#### example
 ```php
 <?php
 
@@ -50,9 +55,14 @@ $es = new MessageFormatter('es', 'Hola {audience}');
 $de = new MessageFormatter('de', 'Hallo {audience}');
 ```
 
-### `static MessageFormatter::create(string $locale, string $pattern)`
+### create
+```php
+static MessageFormatter::create(string $locale, string $pattern)
+```
+
 Create a new instance of MessageFormatter
 
+#### example
 ```php
 <?php
 
@@ -63,9 +73,14 @@ $es = MessageFormatter::create('es', 'Hola {audience}');
 $de = MessageFormatter::create('de', 'Hallo {audience}');
 ```
 
-### `static MessageFormatter::formatMessage(string $locale, string $pattern, array $args)`
+### formatMessage
+```php
+static MessageFormatter::formatMessage(string $locale, string $pattern, array $args)
+```
+
 Quickly format a message, without explicitly creating a new instance of MessageFormatter.
 
+#### example
 ```php
 <?php
 
@@ -74,9 +89,14 @@ use Magneds\MessageFormat\MessageFormatter;
 print MessageFormatter::formatMessage('en', 'Hello {audience}', ['audience' => 'universe']); //  Hello universe
 ```
 
-### `string MessageFormatter::format (array $args)`
+### format
+```php
+string MessageFormatter::format (array $args)
+```
+
 The format method is what actually does the rendering the pattern into a localized string.
 
+#### example
 ```php
 <?php
 
@@ -87,9 +107,14 @@ $es = new MessageFormatter('es-ES', 'Por el pequeño precio de {price, number, c
 print $es->format(['price' => 0.99]); //  Por el pequeño precio de 0,99 € puedes comprar apps.
 ```
 
-### `string MessageFormatter::getLocale(void)`
+### getLocale
+```php
+string MessageFormatter::getLocale(void)
+```
+
 Obtain the locale from the MessageFormatter instance
 
+#### example
 ```php
 <?php
 
@@ -102,9 +127,14 @@ print $enNZ->getLocale();  //  'en_NZ'
 print $nlBE->getLocale();  //  'nl_BE'
 ```
 
-### `string MessageFormatter::getPattern([]bool $compatible=false])`
+### getPattern 
+```php
+string MessageFormatter::getPattern([bool $compatible=false])
+```
+
 Obtain the pattern of the MessageFormatter instance. Optionally providing the PHP Intl MessageFormat compatible variant   
 
+#### example
 ```php
 <?php
 
@@ -116,9 +146,14 @@ print $en->getPattern();      //  Welcome back {name}, you have {count, plural, 
 print $en->getPattern(true);  //  Welcome back {0}, you have {1, plural, =0{no unread messages} one{one unread message} other{# unread messages}}
 ```
 
-### `static array MessageFormatter::parseMessage(string $locale, string $pattern, string $source)`
+### parseMessage
+```php
+static array MessageFormatter::parseMessage(string $locale, string $pattern, string $source)
+```
+
 Quick parse output string, extracting all the variables
 
+#### example
 ```php
 <?php
 
@@ -131,9 +166,14 @@ print MessageFormatter::parseMessage(
 );  //  ['monkeys' => 4560, 'trees' => 123, 'distribution' => 37.073],
 ```
 
-### `array MessageFormatter::parse(string $value)`
+### parse
+```php
+array MessageFormatter::parse(string $value)
+```
+
 Extract the variables from a formatted string
 
+#### example
 ```php
 <?php
 
@@ -145,9 +185,14 @@ $message = 'De kat krabt de krullen van de trap';
 print $nl->parse($message);  //  ['animal' => 'kat', 'action' => 'krabt', 'result' => 'krullen', 'target' => 'trap']
 ```
 
-### `bool MessageFormatter::setPattern(string $pattern)`
+### setPattern
+```php
+bool MessageFormatter::setPattern(string $pattern)
+```
+
 Sets a new pattern without changing the locale
 
+#### example
 ```php
 <?php
 
